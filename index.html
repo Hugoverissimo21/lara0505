@@ -6,6 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<script>
+	  window.addEventListener('scroll', () => {
+	    const isScrolledIntoView = (el) => {
+	      const rect = el.getBoundingClientRect();
+	      const elemTop = rect.top;
+	      const elemBottom = rect.bottom;
+
+	      // Only completely visible elements return true:
+	      const isVisible = (elemTop >= 0) && (elemBottom <= window.innerHeight);
+	      return isVisible;
+	    };
+
+	    const elements = document.querySelectorAll('.fade-in');
+	    elements.forEach((el) => {
+	      if (isScrolledIntoView(el)) {
+	        el.classList.add('visible');
+			
+		
+	      }
+	    });
+	  });
+	  const elements = document.querySelectorAll('*');
+
+	  elements.forEach(element => {
+	    element.classList.add('fade-in');
+	  });
+	  
+	</script>
   </head>
   <body>
     <div class="section">
